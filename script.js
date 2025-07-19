@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "title": "Rebelión en la granja",
           "author": "George Orwell",
           "year": 1945,
-          "category": "10",
+          "category": 10,
           "type": "epub",
           "pages": 118,
           "file": "031 Rebelion en la granja.epub",
@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "title": "Marina",
           "author": "Carlos Ruiz Zafón",
           "year": 2020,
-          "category": "8",
+          "category": 8,
           "type": "epub",
           "pages": 201,
           "file": "032 Marina.epub",
@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "title": "La Biblioteca de la Medianoche",
           "author": "Matt Haig",
           "year": 2020,
-          "category": "6",
+          "category": 6,
           "type": "epub",
           "pages": 282,
           "file": "033 La Biblioteca de la Medianoche.epub",
@@ -402,7 +402,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "title": "Hombres sin mujeres",
           "author": "Haruki Murakami",
           "year": 2014,
-          "category": "5",
+          "category": 5,
           "type": "epub",
           "pages": 169,
           "file": "034 Hombres sin mujeres.epub",
@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "title": "Sobre el dragón del abismo",
           "author": "Kyōka Izumi",
           "year": 2015,
-          "category": "11",
+          "category": 11,
           "type": "epub",
           "pages": 127,
           "file": "035 Sobre el dragon del abismo",
@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "title": "El zorro ártico",
           "author": "Sjón",
           "year": 2003,
-          "category": "5",
+          "category": 5,
           "type": "epub",
           "pages": 94,
           "file": "036 El zorro artico",
@@ -438,7 +438,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "title": "Viaje al país de los blancos",
           "author": "Ousman Umar",
           "year": 2019,
-          "category": "9",
+          "category": 9,
           "type": "epub",
           "pages": 135,
           "file": "037  Viaje al país de los blancos",
@@ -450,7 +450,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "title": "Muerte con pingüino",
           "author": "Andréi Kurkov",
           "year": 1996,
-          "category": "7",
+          "category": 7,
           "type": "epub",
           "pages": 243,
           "file": "038 Muerte con pinguino.epub",
@@ -462,7 +462,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "title": "Mis fantasmas",
           "author": "Gwendoline Riley",
           "year": 2021,
-          "category": "7",
+          "category": 7,
           "type": "epub",
           "pages": 136,
           "file": "039 Mis fantasmas.epub",
@@ -474,7 +474,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "title": "La puerta entreabierta",
           "author": "Fernanda Kubbs",
           "year": 2013,
-          "category": "6",
+          "category": 6,
           "type": "epub",
           "pages": 142,
           "file": "040 La puerta entreabierta.epub",
@@ -484,10 +484,14 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     // Función para cargar los libros en la página
-    function loadBooks() {
+    function loadBooks(categoryId) {
         const booksContainer = document.getElementById('books-container');
+        booksContainer.innerHTML = '';
         
         books.forEach(book => {
+            if (categoryId && book.category !== categoryId) {
+                return;
+            }
             const bookCard = document.createElement('div');
             bookCard.className = 'col-md-4 col-lg-3';
             console.log(book.id);
@@ -575,8 +579,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function(e) {
             e.preventDefault();
             const categoryId = parseInt(this.getAttribute('data-category'));
-            alert(`Mostrar libros de la categoría: ${getCategoryName(categoryId)}`);
-            // En una implementación real, filtraríamos y mostraríamos solo los libros de esta categoría
+            loadBooks(categoryId);
         });
     });
 
