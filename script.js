@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "title": "Recupera tu mente, reconquista tu vida",
           "author": "Marian Rojas Estapé",
           "year": 2024,
-          "category": "",
+          "category": "3",
           "type": "epub",
           "pages": 281,
           "file": "025 Recupera tu mente, reconquista tu vida.epub",
@@ -360,6 +360,126 @@ document.addEventListener('DOMContentLoaded', function() {
           "file": "030 Piensa como un freak.epub",
           "description": "Con Piensa como un freak, Steven D. Levitt y Stephen J. Dubner han escrito su libro más revolucionario hasta la fecha. Con el sello inconfundible de narración cautivadora y análisis no convencional, nos llevan al interior de su proceso reflexivo y nos enseñan a pensar de manera un poco más productiva, más creativa, más racional, es decir, a pensar como un freak. Como en sus libros anteriores, ningún tema está vedado, de los negocios a la filantropía, pasando por los deportes o la política, todo con el objetivo de reciclar tu cerebro. Algunos de los pasos para pensar como un freak: —Deja de lado tu brújula moral, porque es difícil ver un problema con claridad si ya has decidido qué hacer con él. —Piensa como un niño, porque se te ocurrirán mejores ideas y plantearás mejores preguntas. —Toma una clase magistral en incentivos, porque, para bien o para mal, los incentivos gobiernan el mundo. —Aprende a convencer a gente que no quiere ser convencida, porque ser bueno no basta para que uno se salga con la suya. —Aprende a apreciar las ventajas de abandonar, porque no puedes resolver el problema de mañana si no estás dispuesto a reconocer el fracaso de la calamidad de hoy. Está claro que Levitt y Dubner ven el mundo como nadie. Nunca antes unos pensadores tan iconoclastas han sido tan reveladores y tan divertidos de leer.",
           "image": "https://ww2.ebookelo.com/images/cover/33197.jpg"
+        },
+        {
+          "id": 31,
+          "title": "Rebelión en la granja",
+          "author": "George Orwell",
+          "year": 1945,
+          "category": "10",
+          "type": "epub",
+          "pages": 118,
+          "file": "031 Rebelion en la granja.epub",
+          "description": "Una condena de la sociedad totalitaria, brillantemente plasmada en una ingeniosa fábula de carácter alegórico. Los animales de la granja de los Jones se sublevan contra sus dueños humanos y les vencen. Pero la rebelión fracasará al surgir entre ellos rivalidades y envidias, y al aliarse algunos con los amos que derrocaron, traicionando su propia identidad y los intereses de su clase. Aunque Rebelión en la granja fue concebida como una despiadada sátira del estalinismo, el carácter universal de su mensaje hace de este libro un extraordinario análisis de la corrupción que engendra el poder, una furibunda diatriba contra el totalitarismo de cualquier especie y un lúcido examen de las manipulaciones que sufre la verdad histórica en los momentos de transformación política.",
+          "image": "https://ww2.ebookelo.com/images/cover/75120.jpg"
+        },
+        {
+          "id": 32,
+          "title": "Marina",
+          "author": "Carlos Ruiz Zafón",
+          "year": 2020,
+          "category": "8",
+          "type": "epub",
+          "pages": 201,
+          "file": "032 Marina.epub",
+          "description": "En la Barcelona de 1980 Óscar Drai sueña despierto, deslumbrado por los palacetes modernistas cercanos al internado en el que estudia. En una de sus escapadas conoce a Marina, una chica delicada de salud que comparte con Óscar la aventura de adentrarse en un enigma doloroso del pasado de la ciudad. Un misterioso personaje de la posguerra se propuso el mayor desafío imaginable, pero su ambición lo arrastró por sendas siniestras cuyas consecuencias debe pagar alguien todavía hoy.",
+          "image": "https://ww2.ebookelo.com/images/cover/1277.jpg"
+        },
+        {
+          "id": 33,
+          "title": "La Biblioteca de la Medianoche",
+          "author": "Matt Haig",
+          "year": 2020,
+          "category": "6",
+          "type": "epub",
+          "pages": 282,
+          "file": "033 La Biblioteca de la Medianoche.epub",
+          "description": "PREMIO GOODREADS 2020 A LA MEJOR OBRA DE FICCIÓN\n«Entre la vida y la muerte hay una biblioteca. Y los estantes de esa biblioteca son infinitos. Cada libro da la oportunidad de probar otra vida que podrías haber vivido y de comprobar cómo habrían cambiado las cosas si hubieras tomado otras decisiones... ¿Habrías hecho algo de manera diferente si hubieras tenido la oportunidad?».\n\nNora Seed aparece, sin saber cómo, en la Biblioteca de la Medianoche, donde se le ofrece una nueva oportunidad para hacer las cosas bien. Hasta ese momento, su vida ha estado marcada por la infelicidad y el arrepentimiento.\n\nNora siente que ha defraudado a todos, y también a ella misma. Pero esto está a punto de cambiar.\n\nLos libros de la Biblioteca de la Medianoche permitirán a Nora vivir como si hubiera hecho las cosas de otra manera. Con la ayuda de una vieja amiga, tendrá la opción de esquivar todo aquello que se arrepiente de haber hecho (o no haber hecho), en pos de la vida perfecta. Pero las cosas no siempre serán como imaginó que serían, y pronto sus decisiones enfrentarán a la Biblioteca y a ella misma en un peligro extremo. Nora deberá responder una última pregunta antes de que el tiempo se agote: ¿cuál es la mejor manera de vivir?",
+          "image": "https://ww2.ebookelo.com/images/cover/59853.jpg"
+        },
+        {
+          "id": 34,
+          "title": "Hombres sin mujeres",
+          "author": "Haruki Murakami",
+          "year": 2014,
+          "category": "5",
+          "type": "epub",
+          "pages": 169,
+          "file": "034 Hombres sin mujeres.epub",
+          "description": "En su obra más reciente, Haruki Murakami ofrece a los lectores siete relatos en torno al aislamiento y la soledad que preceden o siguen a la relación amorosa: hombres que han perdido a una mujer, o cuya relación ha estado marcada por el desencuentro, asisten inermes al regreso de los fantasmas del pasado, viven el enamoramiento como una enfermedad letal, son incapaces de establecer una comunicación plena con la pareja, o ven extrañamente interrumpida su historia de amor. Otros experimentan atormentados amores no correspondidos o, incluso, como en el relato protagonizado por una metamorfosis kafkiana, desconocen todavía los mecanismos del afecto y del sexo. Sin embargo, las verdaderas protagonistas de estos relatos —llenos de guiños a los Beatles, el jazz, Kafka, Las mil y una noches o, en el caso del título, Hemingway—, son ellas, las mujeres, que, misteriosas, irrumpen en la vida de los hombres para desaparecer, dejando una huella imborrable en la vida de aquellos que las han amado, o de los que, al menos, intentaron amarlas.",
+          "image": "https://ww2.ebookelo.com/images/cover/21905.jpg"
+        },
+        {
+          "id": 35,
+          "title": "Sobre el dragón del abismo",
+          "author": "Kyōka Izumi",
+          "year": 2015,
+          "category": "11",
+          "type": "epub",
+          "pages": 127,
+          "file": "035 Sobre el dragon del abismo",
+          "description": "Durante una soleada tarde de verano, el joven protagonista de Sobre el dragón del abismo, desoyendo las advertencias de los mayores, se interna más allá de los límites del pueblo. Pero la travesura se tornará en pesadilla cuando la picadura de un extraño y colorido insecto le abra las puertas de un mundo sobrenatural y desconocido.\n\nIzumi Kyōka, considerado por muchos el Edgar Allan Poe de Japón, es el creador de la «novela gótica» japonesa y uno de los grandes maestros del relato breve. Por la ambientación sobrenatural y sutilmente terrorífica de sus obras, por el idealismo y la exaltación de la belleza femenina que impregnan sus páginas y por la musicalidad de su estilo literario, Kyōka encarna mejor que ningún otro autor el romanticismo nipón al tiempo que se eleva como quintaesencia de lo japonés.\n\nPresentamos cuatro relatos inéditos de uno de los escritores más fascinantes del siglo XX. Cuatro historias para adentrarse en un mundo inquietante de fantasmas y espectros; mujeres quiméricas e incautos viajeros; amor, celos y terribles secretos.\n\nPor creer fervientemente en las palabras y en los espíritus, Izumi Kyōka rivaliza con el mismo E. T. Hoffman en la pureza de su Romanticismo.\n\nYukio Mishima",
+          "image": "https://ww2.ebookelo.com/images/cover/28287.jpg"
+        },
+        {
+          "id": 36,
+          "title": "El zorro ártico",
+          "author": "Sjón",
+          "year": 2003,
+          "category": "5",
+          "type": "epub",
+          "pages": 94,
+          "file": "036 El zorro artico",
+          "description": "El zorro ártico (Skugga-Baldur), novela ganadora del prestigioso Premio de Literatura del Consejo Nórdico en 2005, es la obra más importante de la literatura islandesa actual. El libro utiliza elementos de las leyendas populares islandesas del siglo XIX. Sjón nos presenta, como en una fábula, la lucha del pastor Baldur Skuggason con un zorro al que quiere cazar. Al final la naturaleza hará justicia con el pastor, cuya personalidad vamos conociendo a través de las demás historias que componen esta obra. El estilo del libro, muy ágil y poético, ha influido de manera determinante en el éxito internacional que lo ha acompañado. Ha sido traducido a más de quince idiomas y ha recibido numerosos elogios de la crítica. Esta es, sin duda, una deliciosa novela, perfecta para adentrarse en la literatura de los países nórdicos.",
+          "image": "https://ww2.ebookelo.com/images/cover/80083.jpg"
+        },
+        {
+          "id": 37,
+          "title": "Viaje al país de los blancos",
+          "author": "Ousman Umar",
+          "year": 2019,
+          "category": "9",
+          "type": "epub",
+          "pages": 135,
+          "file": "037  Viaje al país de los blancos",
+          "description": "La odisea de un joven que arriesgó su vida por un futuro mejor. Mi nombre es Ousman Umar. Sé que nací un martes, no sé de qué mes ni de qué año porque en mi tribu eso no importa. Crecí en la sabana africana. Caminaba siete kilómetros para ir a la escuela. Mi vida era feliz y sencilla, hasta que un día, entre juegos, vi un avión volar. Desde ese momento quise ser piloto, ingeniero, todo, menos negro. La curiosidad por conocer el mundo me empujó a hacer un viaje sin retorno hacia el País de los Blancos.\n\nA los trece años crucé el Sahara a pie, el mar en patera y vi morir en el camino a la mayoría de mis compañeros de viaje, entre ellos a mi mejor amigo. Cuatro años después de comenzar esa hazaña, logré llegar a España y, tras varios meses durmiendo en la calle, me acogió una familia. La primera noche que dormí en su casa, pese a las comodidades y el confort, me puse a llorar como un niño. ¿Por qué había sufrido tanto? ¿Por qué tanta lucha? ¿Qué había hecho mal?\n\nAhora, necesito contar esta historia, hasta que no haya más historias como esta que contar.",
+          "image": "https://ww2.ebookelo.com/images/cover/66871.jpg"
+        },
+        {
+          "id": 38,
+          "title": "Muerte con pingüino",
+          "author": "Andréi Kurkov",
+          "year": 1996,
+          "category": "7",
+          "type": "epub",
+          "pages": 243,
+          "file": "038 Muerte con pinguino.epub",
+          "description": "Viktor es un escritor arruinado: está sin blanca, lo ha dejado su novia, tiene frío.\n\nImaginen si se siente solo que decide adoptar a un pingüino. No sabe que este nuevo compañero de piso, Misha, también está deprimido: suelta suspiros melancólicos cuando chapotea en la bañera de agua helada y se encierra en la habitación como un adolescente. Ahora Viktor no solo está triste, sino que debe consolar a su amigo. Y además alimentarlo.\n\nTodo se complica cuando un gran periódico le encarga escribir esquelas de personajes públicos que aún están vivos. Parece una tarea fácil. Pero no lo es: los protagonistas de sus necrológicas empiezan a fallecer en extrañas circunstancias poco después de que escriba sobre ellos. Misha y Viktor se ven atrapados en una trama absurda y violenta.\n\nUna novela oscura y luminosa, con humor blanco y negro. Como la vida. Como un pingüino.",
+          "image": "https://ww2.ebookelo.com/images/cover/48627.jpg"
+        },
+        {
+          "id": 39,
+          "title": "Mis fantasmas",
+          "author": "Gwendoline Riley",
+          "year": 2021,
+          "category": "7",
+          "type": "epub",
+          "pages": 136,
+          "file": "039 Mis fantasmas.epub",
+          "description": "Helen Grant siempre ha sido un enigma para su hija. Bridge apenas con­serva recuerdos de sus padres antes del divorcio, pero intuye que aquellos años de matrimonio fueron decisivos para moldear una personalidad que a ella se le antoja incomprensible. En la plenitud de su vida y su carrera, Bridge afronta una relación hostil con su madre, a la que apenas ve una vez al año. Aunque es consciente de que Helen siempre ha dejado mucho que desear como figura materna, Bridge pretende tirar del hilo y enten­der –o quizá simplemente hacer entender a su madre– por qué las cosas nunca terminaron de funcionar entre ellas.\n\nCon un sentido del humor y una clarividencia deslumbrantes, Mis fantasmas es un acertadísimo retrato de ese vínculo fascinante y excepcio­nal que une –y desune– a madres e hijas, y que, como en el caso de Helen y Bridge, oscila entre lo frustrado y lo frustrante, el cariño y la crueldad, la ternura y el rencor mutuo. El logro genial de Gwendoline Riley es brindar­nos una voz única e irrepetible que, no obstante, representa a infinidad de mujeres, una voz de una potencia capaz de sacudir los cimientos de la siempre compleja relación entre una madre y una hija.",
+          "image": "https://ww2.ebookelo.com/images/cover/79463.jpg"
+        },
+        {
+          "id": 40,
+          "title": "La puerta entreabierta",
+          "author": "Fernanda Kubbs",
+          "year": 2013,
+          "category": "6",
+          "type": "epub",
+          "pages": 142,
+          "file": "040 La puerta entreabierta.epub",
+          "description": "Isa es una joven y escéptica periodista a la que han encargado un reportaje sobre el mundo de la magia. Pero ante La Gran Demirovska, afamada pitonisa de paso por la ciudad, la descreída reportera acaba sufriendo una transformación inesperada que la sitúa en un lugar y una perspectiva impensables. ¿Cómo ha sucedido?, ¿dónde buscar una salida?, ¿qué hacer para dominar la angustia creciente? Isa siente que ha atravesado una puerta que, como las cataratas en las películas de aventuras, conecta la segura realidad que ella conocía con otro mundo y otras percepciones. Sólo los exóticos personajes a los que se encomienda, y las fascinantes historias que se cuentan entre sí, parecen trazar un itinerario de regreso a su entorno inicial que tal vez ya no sea el mismo.",
+          "image": "https://ww2.ebookelo.com/images/cover/4642.jpg"
         }
     ];
 
@@ -435,7 +555,14 @@ document.addEventListener('DOMContentLoaded', function() {
             1: "Desarrollo Personal",
             2: "Superación",
             3: "Autoayuda",
-            4: "Finanzas"
+            4: "Finanzas",
+            5: "Drama",
+            6: "Fantástico",
+            7: "Humor",
+            8: "Intriga",
+            9: "Memorias",
+            10: "Sátira",
+            11: "Terror"
         };
         return categories[categoryId] || "General";
     }

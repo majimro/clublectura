@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club de Lectura - Descubre tu próxima aventura</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-light: #ecf0f1;
+            --bg-dark: #1a1a1a;
+            --bg-light: #f8f9fa;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-color) !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(52, 152, 219, 0.8));
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,112C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            background: white;
+            margin-top: -50px;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            z-index: 2;
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-tab {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid var(--secondary-color);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .filter-tab:hover,
+        .filter-tab.active {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .book-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover .book-image {
+            transform: scale(1.05);
+        }
+
+        .book-info {
+            padding: 1.5rem;
+        }
+
+        .book-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            line-height: 1.4;
+        }
+
+        .book-author {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .book-year {
+            background: var(--bg-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+
+        .book-type {
+            background: var(--secondary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .book-pages {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .stats-section {
+            background: var(--bg-light);
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .category-1 { background: #e74c3c; color: white; }
+        .category-2 { background: #f39c12; color: white; }
+        .category-3 { background: #f39c12; color: white; }
+        .category-4 { background: #9b59b6; color: white; }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .book-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .filter-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-book-open me-2"></i>Club de Lectura</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#libros">Libros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#estadisticas">Estadísticas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title fade-in">Descubre tu próxima aventura</h1>
+            <p class="hero-subtitle fade-in">Explora nuestra colección curada de libros que transformarán tu perspectiva</p>
+            <a href="#libros" class="btn btn-light btn-lg px-4 py-3 fade-in">Explorar Colección</a>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="container">
+            <section id="libros">
+                <h2 class="section-title fade-in">Nuestra Colección</h2>
+                
+                <div class="search-container fade-in">
+                    <input type="text" class="search-input" placeholder="Buscar por título, autor o año..." id="searchInput">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+
+                <div class="filter-tabs fade-in">
+                    <div class="filter-tab active" data-category="all">Todos</div>
+                    <div class="filter-tab" data-category="1">Crecimiento Personal y Liderazgo</div>
+                    <div class="filter-tab" data-category="2,3">Aventuras y Superación Personal</div>
+                    <div class="filter-tab" data-category="4">Negocios y Mentalidad Emprendedora</div>
+                </div>
+
+                <div class="book-grid" id="bookGrid">
+                    <!-- Los libros se cargarán aquí dinámicamente -->
+                </div>
+            </section>
+
+            <section id="estadisticas" class="stats-section">
+                <div class="container">
+                    <h2 class="section-title fade-in">Estadísticas de la Colección</h2>
+                    <div class="row">
+                        <div class="col-md-3 col-6 mb-4">
+                            <div class="stat-card fade-in">
+                                <div class="stat-number" id="totalBooks">30</div>
+                                <div class="stat-label">Libros</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-4">
+                            <div class="stat-card fade-in">
+                                <div class="stat-number" id="totalAuthors">28</div>
+                                <div class="stat-label">Autores</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-4">
+                            <div class="stat-card fade-in">
+                                <div class="stat-number" id="totalPages">6,845</div>
+                                <div class="stat-label">Páginas</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-4">
+                            <div class="stat-card fade-in">
+                                <div class="stat-number" id="avgYear">2013</div>
+                                <div class="stat-label">Año Promedio</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Datos de los libros
+        const books = [
+            {id: 1, title: "Los 7 hábitos de la gente altamente efectiva", author: "Stephen R. Covey", year: 2016, category: 1, type: "epub", pages: 394, image: "https://ww2.ebookelo.com/images/cover/4434.jpg"},
+            {id: 2, title: "El monje que vendió su Ferrari", author: "Robin Sharma", year: 2001, category: 1, type: "epub", pages: 151, image: "https://ww2.ebookelo.com/images/cover/16502.jpg"},
+            {id: 3, title: "Hábitos atómicos", author: "James Clear", year: 2018, category: 1, type: "epub", pages: 280, image: "https://ww2.ebookelo.com/images/cover/60775.jpg"},
+            {id: 4, title: "Mindset: La actitud del éxito", author: "Carol S. Dweck", year: 2006, category: 1, type: "epub", pages: 336, image: "https://image.cdn0.buscalibre.com/3548641.__RS360x360__.jpg"},
+            {id: 5, title: "Grit: El poder de la pasión y la perseverancia", author: "Angela Duckworth", year: 2016, category: 1, type: "pdf", pages: 384, image: "https://m.media-amazon.com/images/I/71qBlWoY9wL._SY466_.jpg"},
+            {id: 6, title: "El poder del ahora", author: "Eckhart Tolle", year: 2001, category: 1, type: "epub", pages: 162, image: "https://ww2.ebookelo.com/images/cover/17989.jpg"},
+            {id: 7, title: "Empieza con el porqué", author: "Simon Sinek", year: 2009, category: 1, type: "epub", pages: 264, image: "https://m.media-amazon.com/images/I/41Jx8BioCdL._SY445_SX342_.jpg"},
+            {id: 8, title: "Deep Work Enfócate", author: "Cal Newport", year: 2016, category: 1, type: "", pages: 211, image: "https://ww2.ebookelo.com/images/cover/51311.jpg"},
+            {id: 9, title: "El sutil arte de que, casi todo, te importe una mierda", author: "Mark Manson", year: 2016, category: 1, type: "epub", pages: 146, image: "https://ww2.ebookelo.com/images/cover/52837.jpg"},
+            {id: 10, title: "La semana laboral de 4 horas", author: "Timothy Ferriss", year: 2007, category: 1, type: "epub", pages: 478, image: "https://m.media-amazon.com/images/I/71kA+YdjzwL._SL1500_.jpg"},
+            {id: 11, title: "Wild: Viaje salvaje", author: "Cheryl Strayed", year: 2012, category: 2, type: "epub", pages: 342, image: "https://ww2.ebookelo.com/images/cover/20886.jpg"},
+            {id: 12, title: "Into the Wild, Hacia rutas salvajes", author: "Jon Krakauer", year: 2007, category: 2, type: "epub", pages: 235, image: "https://ww2.ebookelo.com/images/cover/1715.jpg"},
+            {id: 13, title: "El alquimista", author: "Paulo Coelho", year: 2005, category: 2, type: "epub", pages: 89, image: "https://ww2.ebookelo.com/images/cover/5368.jpg"},
+            {id: 14, title: "Shoe Dog, El fundador de Nike", author: "Phil Knight", year: 2016, category: 2, type: "pdf", pages: 372, image: "https://m.media-amazon.com/images/I/71eIlDc1uAL._SL1500_.jpg"},
+            {id: 15, title: "No me puedes lastimar", author: "David Goggins", year: 2018, category: 2, type: "epub", pages: 294, image: "https://ww2.ebookelo.com/images/cover/67394.jpg"},
+            {id: 16, title: "Born to Run, Nacidos para correr", author: "Christopher McDougall", year: 2009, category: 2, type: "epub", pages: 330, image: "https://ww2.ebookelo.com/images/cover/2785.jpg"},
+            {id: 17, title: "El hombre en busca de sentido", author: "Viktor Frankl", year: 2023, category: 2, type: "epub", pages: 112, image: "https://ww2.ebookelo.com/images/cover/6272.jpg"},
+            {id: 18, title: "El curioso incidente del perro a medianoche", author: "Mark Haddon", year: 2003, category: 2, type: "epub", pages: 186, image: "https://ww2.ebookelo.com/images/cover/5910.jpg"},
+            {id: 19, title: "El marciano", author: "Andy Weir", year: 2012, category: 3, type: "epub", pages: 247, image: "https://ww2.ebookelo.com/images/cover/18535.jpg"},
+            {id: 20, title: "Fahrenheit 451", author: "Ray Bradbury", year: 2023, category: 3, type: "epub", pages: 129, image: "https://ww2.ebookelo.com/images/cover/2600.jpg"},
+            {id: 21, title: "El arte de no amargarse la vida", author: "Rafael Santandreu", year: 2011, category: 3, type: "epub", pages: 201, image: "https://ww2.ebookelo.com/images/cover/6012.jpg"},
+            {id: 22, title: "Ubuntu", author: "Mungi Ngomane", year: 2019, category: 3, type: "epub", pages: 192, image: "https://ww2.ebookelo.com/images/cover/68128.jpg"},
+            {id: 23, title: "El milagro de mindfulness", author: "Thich Nhat Hanh", year: 2008, category: 3, type: "pdf", pages: 100, image: "https://m.media-amazon.com/images/I/81JtxXlJ5PL._SL1500_.jpg"},
+            {id: 24, title: "Confía en mí, estoy mintiendo", author: "Ryan Holiday", year: 2014, category: 3, type: "epub", pages: 254, image: "https://ww2.ebookelo.com/images/cover/55239.jpg"},
+            {id: 25, title: "Recupera tu mente, reconquista tu vida", author: "Marian Rojas Estapé", year: 2024, category: "", type: "epub", pages: 281, image: "https://ww2.ebookelo.com/images/cover/75832.jpg"},
+            {id: 26, title: "Padre rico, padre pobre", author: "Robert Kiyosaki", year: 2000, category: 4, type: "epub", pages: 164, image: "https://ww2.ebookelo.com/images/cover/44764.jpg"},
+            {id: 27, title: "El libro negro del emprendedor", author: "Fernando Trías de Bes", year: 2007, category: 4, type: "epub", pages: 108, image: "https://ww2.ebookelo.com/images/cover/10342.jpg"},
+            {id: 28, title: "Los multimillonarios del bitcoin", author: "Ben Mezrich", year: 2019, category: 4, type: "epub", pages: 285, image: "https://ww2.ebookelo.com/images/cover/57698.jpg"},
+            {id: 29, title: "Diario Emprendedor", author: "Joshua A. Aguilar", year: 2014, category: 4, type: "epub", pages: 156, image: "https://ww2.ebookelo.com/images/cover/13189.jpg"},
+            {id: 30, title: "Piensa como un freak", author: "Steven D. Levitt, Stephen J. Dubner", year: 2014, category: 4, type: "epub", pages: 193, image: "https://ww2.ebookelo.com/images/cover/33197.jpg"}
+        ];
+
+        let filteredBooks = books;
+
+        // Función para crear una tarjeta de libro
+        function createBookCard(book) {
+            const categoryNames = {
+                1: "Crecimiento Personal y Liderazgo",
+                2: "Aventuras y Superación Personal",
+                3: "Aventuras y Superación Personal",
+                4: "Negocios y Mentalidad Emprendedora"
+            };
+
+            return `
+                <div class="book-card fade-in" data-category="${book.category}">
+                    <div class="category-badge category-${book.category}">
+                        ${categoryNames[book.category] || "General"}
+                    </div>
+                    <img src="${book.image}" alt="${book.title}" class="book-image" loading="lazy">
+                    <div class="book-info">
+                        <h3 class="book-title">${book.title}</h3>
+                        <p class="book-author">${book.author}</p>
+                        <div class="book-details">
+                            <span class="book-year">${book.year}</span>
+                            <span class="book-type">${book.type || 'N/A'}</span>
+                            <span class="book-pages">${book.pages} páginas</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Función para renderizar libros
+        function renderBooks(booksToRender) {
+            const bookGrid = document.getElementById('bookGrid');
+            bookGrid.innerHTML = booksToRender.map(book => createBookCard(book)).join('');
+            
+            // Aplicar animación fade-in a los nuevos elementos
+            setTimeout(() => {
+                document.querySelectorAll('.book-card').forEach(card => {
+                    card.classList.add('visible');
+                });
+            }, 100);
+        }
+
+        // Función para filtrar libros
+        function filterBooks(category) {
+            if (category === 'all') {
+                filteredBooks = books;
+            } else if (category === '2,3') {
+                filteredBooks = books.filter(book => book.category == 2 || book.category == 3);
+            } else {
+                filteredBooks = books.filter(book => book.category == category);
+            }
+            renderBooks(filteredBooks);
+        }
+
+        // Función para buscar libros
+        function searchBooks(query) {
+            const searchTerm = query.toLowerCase();
+            const searchResults = filteredBooks.filter(book => 
+                book.title.toLowerCase().includes(searchTerm) ||
+                book.author.toLowerCase().includes(searchTerm) ||
+                book.year.toString().includes(searchTerm)
+            );
+            renderBooks(searchResults);
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Renderizar libros inicialmente
+            renderBooks(books);
+
+            // Filtros de categoría
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    filterBooks(this.getAttribute('data-category'));
+                });
+            });
+
+            // Búsqueda
+            document.getElementById('searchInput').addEventListener('input', function() {
+                searchBooks(this.value);
+            });
+
+            // Animación de scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
