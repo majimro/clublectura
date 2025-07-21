@@ -580,6 +580,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const categoryId = parseInt(this.getAttribute('data-category'));
             loadBooks(categoryId);
+            window.location = '#libros';
         });
     });
 
